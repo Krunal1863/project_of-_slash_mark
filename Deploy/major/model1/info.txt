@@ -1,1 +1,4 @@
 model 1 - content based random_recomandation
+
+
+run : python app.py
