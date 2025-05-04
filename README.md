@@ -13,4 +13,7 @@ notes : before you use file or code please check this thing and try to change th
         2. unzip dataset 
         3. copy .pkl file into model which you want to use and past at app.py level 
 
+
+    project folder : https://drive.google.com/drive/folders/1lnHMtUfgUorYs5sE7Z_UrN3WWttrFzIj?usp=drive_link
+
 enjoy codeing ::)
