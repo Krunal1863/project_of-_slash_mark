@@ -1,0 +1,16 @@
+in this practical i upload minor project  and 
+
+
+model 1 is basically about mnist dataset
+link  for dataset  : https://drive.google.com/drive/folders/1lnHMtUfgUorYs5sE7Z_UrN3WWttrFzIj?usp=sharing
+
+1. open above link 
+2. open folder and find minor 3
+3. and download datset folder for minor 3 - model 1 project
+
+
+
+
+
+
+
