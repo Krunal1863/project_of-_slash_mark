@@ -16,6 +16,8 @@ notes : before you use file or code please check this thing and try to change th
 
     project folder : https://drive.google.com/drive/folders/1lnHMtUfgUorYs5sE7Z_UrN3WWttrFzIj?usp=drive_link
 
-    project srs or report location -- > in 8 th Sem\final report\Final part\108_Final Report\PRJ2025CE108_revised_final_FINAL1863
+    project srs or report location -- > https://drive.google.com/drive/folders/1lnHMtUfgUorYs5sE7Z_UrN3WWttrFzIj?usp=drive_link 
+                                        
+                                            in 8 th Sem\final report\Final part\108_Final Report\PRJ2025CE108_revised_final_FINAL1863
 
 enjoy codeing ::)
