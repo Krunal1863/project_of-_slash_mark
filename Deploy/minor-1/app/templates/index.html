@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management App</title>
+    <style>
+        /* Add your CSS here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        form input, form select, form button {
+            display: block;
+            width: 95%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        ul {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul li {
+            background: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        ul li a {
+            color: red;
+            text-decoration: none;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Task Management App</h1>
+
+    <!-- Add Task Form -->
+    <form action="/add" method="post">
+        <input type="text" name="description" placeholder="Task name" required>
+        <select name="priority" required>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+        <button type="submit">Add Task</button>
+    </form>
+
+    <!-- Task List -->
+    <h2>Task List</h2>
+    <ul>
+        {% for task in tasks %}
+            <li>
+                {{ task.description }} ({{ task.priority }})
+                <a href="/remove/{{ loop.index0 }}">Remove</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Prioritize Tasks -->
+    <form action="/prioritize" method="get">
+        <button type="submit">Prioritize Tasks</button>
+    </form>
+
+    <!-- Download CSV Button -->
+    <form action="/download" method="get">
+        <button type="submit">Download CSV</button>
+    </form>
+</body>
+</html>

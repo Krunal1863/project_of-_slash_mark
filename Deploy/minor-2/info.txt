@@ -1,0 +1,18 @@
+BASIC Project:
+
+Task 2 :  XGBoost Home Price Prediction
+
+Description: 
+        
+        Predict home prices using XGBoost with factors like income, schools, hospitals, and crime rates.
+
+
+        ****************************************
+
+
+RUN code :
+
+                python app.py 
+
+
+                port -- 5002

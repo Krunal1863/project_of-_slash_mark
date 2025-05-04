@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popularity-Based Recommender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .recommendations {
+            margin-top: 20px;
+        }
+        .recommendations ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .recommendations li {
+            margin: 5px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Popularity-Based Recommender</h1>
+    <form id="recommendForm">
+        <label for="user_id">Enter User ID:</label>
+        <input type="text" id="user_id" name="user_id" placeholder="Enter your user ID" required>
+        <input type="submit" value="Get Recommendations">
+    </form>
+    <div class="recommendations" id="recommendations">
+        <h2>Recommendations:</h2>
+        <ul id="recommendationList"></ul>
+    </div>
+
+    <script>
+        document.getElementById('recommendForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const userId = document.getElementById('user_id').value;
+            const recommendationList = document.getElementById('recommendationList');
+            recommendationList.innerHTML = ''; // Clear previous recommendations
+
+            try {
+                const response = await fetch(`/recommend?user_id=${userId}`);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch recommendations');
+                }
+                const recommendations = await response.json();
+                recommendations.forEach(rec => {
+                    const li = document.createElement('li');
+                    li.textContent = rec.song;
+                    recommendationList.appendChild(li);
+                });
+            } catch (error) {
+                const li = document.createElement('li');
+                li.textContent = 'Error fetching recommendations. Please try again.';
+                recommendationList.appendChild(li);
+            }
+        });
+    </script>
+</body>
+</html>

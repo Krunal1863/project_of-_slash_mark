@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Blood Donation Prediction</h1>
+        <p>Use the form below to predict whether a person will donate blood based on their donation history.</p>
+
+        <div class="info">
+            <h2>What do the inputs mean?</h2>
+            <ul>
+                <P><strong>(Recency) : </strong> Months since the last donation. </P>
+                <P> <strong>(Frequency) : </strong> Total number of donations. </P>
+                    <P> <strong>(Monetary) : </strong> Total blood donated in c.c.</P>
+                        <P><strong>(Time) : </strong> Months since the first donation.</P>
+            </ul>
+        </div>
+
+        <form action="/predict" method="POST">
+            <label for="recency">Recency (months):</label>
+            <input type="number" id="recency" name="recency" required><br><br>
+
+            <label for="frequency">Frequency (times):</label>
+            <input type="number" id="frequency" name="frequency" required><br><br>
+
+            <label for="monetary">Monetary (c.c. blood):</label>
+            <input type="number" id="monetary" name="monetary" required><br><br>
+
+            <label for="time">Time (months):</label>
+            <input type="number" id="time" name="time" required><br><br>
+
+            <button type="submit" class="btn">Predict</button>
+        </form>
+
+        {% if prediction_text %}
+            <h2 class="result">{{ prediction_text }}</h2>
+        {% endif %}
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('/static/blood.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+    margin-top: 10%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    font-size: 1.2em;
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 80%;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.btn:hover {
+    background-color: #c0392b;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: white;
+}
+
+/* Style for the "What do the inputs mean?" section */
+.info h2 {
+    font-size: 0.8em; /* Adjust the font size of the heading */
+    color: #e74c3c; /* Optional: Change the color of the heading */
+    text-align: center;
+}
+
+.info ul {
+    font-size: 0.8em; /* Adjust the font size of the list items */
+    line-height: 1.6; /* Add spacing between lines for better readability */
+    color: #fff; /* Optional: Change the text color */
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6); /* Optional: Add a background for better contrast */
+    border-radius: 10px;
+}

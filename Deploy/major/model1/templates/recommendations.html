@@ -1,0 +1,150 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Recommendations for "{{ song_name }}"</h1>
+    <ul>
+        {% for song in recommendations %}
+        <li>{{ song }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Go Back</a>
+</body>
+</html> -->
+
+
+<!-- version -- 2  -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Recommendations for "{{ song_name }}"</h1>
+    <div class="recommendations">
+        {% for rec in recommendations %}
+        <div class="song-card">
+            <img src="{{ rec.photo }}" alt="{{ rec.song }}" class="song-photo">
+            <h2>{{ rec.song }}</h2>
+            <p>Artist: {{ rec.artist }}</p>
+            <p><a href="{{ rec.link }}" target="_blank">Listen on YouTube</a></p>
+            <p><a href="{{ url_for('lyrics', song_name=rec.song) }}" class="lyrics-link">View Lyrics</a></p>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="/" class="back-button">Go Back</a>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .recommendations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .song-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .song-photo {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .song-card h2 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .song-card p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .song-card a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .song-card a:hover {
+            text-decoration: underline;
+        }
+
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            text-align: center;
+            width: 150px;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recommendations for "{{ song_name }}"</h1>
+    <div class="recommendations">
+        {% for rec in recommendations %}
+        <div class="song-card">
+            <img src="{{ rec.photo }}" alt="{{ rec.song }}" class="song-photo">
+            <h2>{{ rec.song }}</h2>
+            <p>Artist: {{ rec.artist }}</p>
+            <p><a href="{{ rec.link }}" target="_blank">Listen on YouTube</a></p>
+            <p><a href="{{ url_for('lyrics', song_name=rec.song) }}" class="lyrics-link">View Lyrics</a></p>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="/" class="back-button">Go Back</a>
+</body>
+</html>

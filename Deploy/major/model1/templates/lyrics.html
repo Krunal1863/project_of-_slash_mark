@@ -1,0 +1,91 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyrics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="lyrics-container">
+        <h1>Lyrics for "{{ song.song }}"</h1>
+        <h2>By {{ song.artist }}</h2>
+        <div class="lyrics-box">
+            <pre class="lyrics-text">{{ song.lyrics }}</pre>
+        </div>
+        <a href="/" class="back-button">Go Back</a>
+    </div>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyrics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .lyrics-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .lyrics-box {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: left;
+            white-space: pre-wrap; /* Ensures text wraps properly */
+            font-family: "Courier New", Courier, monospace;
+            font-size: 16px;
+            color: #444;
+            overflow-y: auto; /* Only vertical scrolling */
+            max-height: 400px; /* Limit height for long lyrics */
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="lyrics-container">
+        <h1>Lyrics for "{{ song.song }}"</h1>
+        <h2>By {{ song.artist }}</h2>
+        <div class="lyrics-box">
+            <pre>{{ song.lyrics }}</pre>
+        </div>
+        <a href="/" class="back-button">Go Back</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Recommendations for User "{{ user_id }}"</h1>
+    <div class="recommendations">
+        {% for rec in recommendations %}
+        <div class="song-card">
+            <h2>{{ rec['song'] }}</h2>
+            <p>Artist: {{ rec['artist'] }}</p>
+            <p><a href="{{ url_for('lyrics', song_name=rec['song']) }}" class="lyrics-link">View Lyrics</a></p>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="/" class="back-button">Go Back</a>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Recommendations for User "{{ user_id }}"</h1>
+    <div class="recommendations">
+        {% for rec in recommendations %}
+        <div class="song-card">
+            <h2>{{ rec.song }}</h2>
+            {% if model_type == "popularity" %}
+            <p>Listen Count: {{ rec.count }}</p>
+            {% endif %}
+            <p><a href="{{ url_for('lyrics', song_name=rec.song) }}" class="lyrics-link">View Lyrics</a></p>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="/" class="back-button">Go Back</a>
+</body>
+</html>
