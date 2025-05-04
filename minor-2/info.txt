@@ -1,0 +1,7 @@
+BASIC Project:
+
+Task 2 :  XGBoost Home Price Prediction
+
+Description: 
+        
+        Predict home prices using XGBoost with factors 
